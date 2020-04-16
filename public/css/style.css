@@ -1,4 +1,20 @@
+html,
+body {
+	background-color: bisque;
+}
+
+.navbar {
+	background-color: #FFDBAA;
+}
+
 .hero {
   width: 100%;
   height: auto;
+}
+
+.form-group {
+	background-color: #FFDBAA;
+	border-radius: 10px;
+	margin: 10px;
+	padding: 10px;
 }

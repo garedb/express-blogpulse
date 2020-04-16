@@ -1,0 +1,16 @@
+<h1>Edit <%= article.title %> by <%= article.author.getFullName() %></h1>
+
+<form action="/articles/edit" method="POST">
+  <div class="form-group">
+    <input type="hidden" name="id" value="<%= article.id %>">
+    <label for="title">Title</label>
+    <input type="text" class="form-control" id="title" name="title" value="<%= article.title %>" required>
+  </div>
+
+  <div class="form-group">
+    <label for="content">Content</label>
+    <textarea type="text" class="form-control" id="content" name="content" required><%= article.content %></textarea>
+  </div>
+
+  <input type="submit" class="btn btn-primary">
+</form>

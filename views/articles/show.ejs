@@ -6,6 +6,31 @@
 
 <p><%= article.content %></p>
 
-<hr />
+<hr>
+
+<h2>Comments</h2>
+
+<% if( article && article.comments) {%>
+  <% article.comments.forEach(function(comment) {%>
+    <div>
+    <hr>
+   <%= comment.content %>
+   <br><br>
+  <strong>- <%= comment.name %></strong>
+</div>
+  <%})%>
+<%}%>
+
+
+<hr>
+<form class="form-group" method="POST" action="/articles/<%= article.id %>/comments">
+<label for="name">Name:</label><br>
+<input type="text" name="name" class="col-8"> <br>
+<label for="content">Comment:</label><br>
+<textarea rows="4" cols="50" name="content"></textarea><br><br>
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<hr>
 
 <a href="/">&larr; Back Home</a>
