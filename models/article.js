@@ -9,6 +9,10 @@ module.exports = (sequelize, DataTypes) => {
     // associations can be defined here
     models.article.belongsTo(models.author)
     models.article.hasMany(models.comment)
+    models.article.belongsToMany(models.tag, {
+      through: 'articles_tags',
+      onDelete: 'CASCADE'
+    })
   }
   return article
 }

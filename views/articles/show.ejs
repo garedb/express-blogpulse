@@ -6,6 +6,14 @@
 
 <p><%= article.content %></p>
 
+<strong>Tags:</strong>
+
+<% article.tags.forEach(t => { %>
+  #<%= t.name %>
+<% }) %>
+
+
+
 <hr>
 
 <h2>Comments</h2>
